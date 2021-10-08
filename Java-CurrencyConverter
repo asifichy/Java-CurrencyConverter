@@ -1,0 +1,37 @@
+
+import java.util.Scanner;
+
+
+public class Prob06 {
+
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Enter exchange rate from BDT to USD: ");
+        double rate = input.nextDouble();
+        
+        System.out.println("Enter 0 to USD to BDT and 1 to BDT to USD: ");
+        int choice = input.nextInt();
+        
+        double amount;
+        switch(choice)
+        {
+            case 0:
+                System.out.println("Enter USD amount: ");
+                amount = input.nextDouble();
+                System.out.println("$" + amount + " is " + (amount * rate) + " Taka");
+                break;
+
+            case 1:
+                System.out.println("Enter BDT amount: ");
+                amount = input.nextDouble();
+                System.out.println(amount + " BDT is " + ((int)((amount * 100) / rate)) / 100.0);
+                break;
+
+            default:
+                System.out.println("Incorrect choice!");
+                break;
+        }
+    }
+}
